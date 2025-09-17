@@ -1,3 +1,6 @@
+# Mohammad Anwarul Basher
+
+
 # Q1. Add Two Gene Counts
 # You sequenced Gene A and Gene B from a biopsy.
 # Gene A had 120reads, and Gene B had 200 reads. You want to calculate their combined expression
