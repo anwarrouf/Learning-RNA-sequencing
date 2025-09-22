@@ -15,7 +15,7 @@ patients_name[1]
 # You want to store them for later reference
 # Task: Store these IDs in a numeric vector and print them.
 patients_ID <- c(1,2,3,4)
-print(patients_ID)
+patients_ID
 
 # Problem 3: Student Participants in a Workshop
 # Background: In a medical statistics workshop, three medical students — Maria, Shirmin, and Alam — participated in the hands-on R training session.
