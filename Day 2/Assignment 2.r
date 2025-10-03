@@ -153,11 +153,48 @@ data_frame <- data.frame(Tamim, Imrul, Fiz)
 data_frame
 
 # or
+patients <- c("Tamim", "Imrul", "Fiz")
 age <- c(35,39,37)
 number_of_mutations_detected <- c(4,1,0)
 married <- c(T,T,T)
 
-data_frame <- data.frame(age,number_of_mutations_detected,married)
+data_frame <- data.frame(patients, age,number_of_mutations_detected,married)
 data_frame
-row.names(data_frame) <- c("Tamim","Imrul","Fiz")
+
+# Problem 17: Exploring Data Frame Structure
+# Background: Before analysis, you need to check the column types (numeric, logical, character) and overall structure.
+# Task: Use str() and View() to explore the data.
+
+class(data_frame$age)
+class(data_frame$number_of_mutations_detected)
+class(data_frame$married)
+
+str(data_frame) # to check the structure (str function) of the data frame
+View(data_frame) # to view the data frame in environment panel. Data frame will be opened as a table in environment panel
+
+# Problem 18: Renaming Columns
+# Background: Your PI (principal investigator) requested clearer column names: "Patient", "Age", "Mutations", "Married".
+# Task: Rename the columns accordingly.
+
+colnames(data_frame) <- c("Patient", "Age", "Mutations", "Married")
 data_frame
+
+# Problem 19: Extracting a Subset of Data
+# Background: The epidemiologist needs to quickly review the "Name" and "Age" of the first two patients for age distribution.
+# Task: Use indexing to extract this sub-data frame.
+data_frame[c(1,2),c(1,2)]
+
+# Problem 20: Extracting a Single Column
+# Background: A geneticist wants only the "Mutations" column to calculate mutation frequency.
+# Task: Extract it using both df[,3] and df$Mutations
+data_frame[,3]
+data_frame$Mutations
+
+# Problem 21: Adding Row Names
+# Background: You want to add row names so you can easily reference patient-specific rows later without remembering row numbers.
+# Task: Assign "tamim", "imrul", "fiz" as row names
+
+data_frame
+install.packages("panda")
+library(panda)
+
