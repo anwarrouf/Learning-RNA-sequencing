@@ -117,7 +117,7 @@ if (FBG < 100){
   print("Normal")
 } else if (FBG >= 100 & FBG <125){
   print("Prediabetes")
-} else if (FBG >=126){
+} else if (FBG >= 126{
   print("Diabetes")
 }
 
@@ -167,8 +167,10 @@ survival_months <- c(45, 62, 38)
 
 my_list <- list(Patients_detail = df, TumorMarker = tumor_marker, Survival = survival_months)
 my_list
+TumorMarker <- "TumorMarker"
 
-CEA_expression <- my_list[["TumorMarker"]][2,"CEA"]
+
+CEA_expression <- my_list[[TumorMarker]][2,"CEA"]
 CEA_expression
 survival_3rd_patient <-my_list[["Survival"]][3]
 survival_3rd_patient
