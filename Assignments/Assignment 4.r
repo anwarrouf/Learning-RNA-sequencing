@@ -83,6 +83,7 @@ BMI <- c( 31.2, 28.5, 24.1, 33.4)
 BP_systolic <- c(150, 165, 120, 175)
 
 df <- data.frame(Name, Age, BMI, BP_systolic)
+df
 
 # Problem 7: Add a Hypertension Column
 # Background: Blood pressure ≥140 mmHg indicates hypertension.
@@ -163,6 +164,8 @@ load_tracking <- ifelse(viral_loads < 1000, "Normal",
                         ifelse(viral_loads >= 1000 & viral_loads < 10000, "Elevated",
                                ifelse(viral_loads >= 100000, "Critical", "NA")))
 print(load_tracking)
+
+# or
 
 for (i in viral_loads){
   if(i < 1000){
