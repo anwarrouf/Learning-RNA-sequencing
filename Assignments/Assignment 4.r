@@ -177,3 +177,76 @@ for (i in viral_loads){
   }
 }
 
+# Problem 14: Automated Clinical Categorization
+# Background: You have a dataset of HIV patients and their CD4 cell counts.
+# Name CD4_Count
+# Rahim 120
+# Sumaiya 480
+# Babul 230
+# Joya 700
+# CD4 thresholds:
+#   • "Severe Immunodeficiency" if <200
+# • "Moderate" if 200–500
+# • "Normal" if >500
+# Task:
+#   1. Create the data frame.
+# 2. Add a new column "Immunity_Status" using ifelse() logic.
+# 3. Print only "Severe" cases.
+
+Name <- c("Rahim", "Sumaiya", "Babul", "Joya")
+CD4_count <- c(120,480, 230, 700)
+
+df_cd4 <- data.frame(Name, CD4_count)
+df_cd4
+
+df_cd4$Immunity_Status <- ifelse(df_cd4$CD4_count < 200, "Severe Immunodeficiency",
+                                 ifelse(df_cd4$CD4_count >= 200 & df_cd4$CD4_count <= 500, "Moderate", "Normal"))
+df_cd4
+severe_case <- df_cd4[df_cd4$CD4_count < 200, ]
+severe_case
+
+# Problem 15: Integrating Loops and Conditionals for Clinical Scoring
+# Background: You are developing a simple Infection Severity Scoring model for 5 patients.
+# Each has a numeric infection score stored in a vector: c(10, 35, 50, 80, 95).
+# Severity classification:
+#   • <30 → "Mild"
+# • 30–70 → "Moderate"
+# • 70 → "Severe"
+# Task:
+#   1. Use a for loop and if-else to assign severity categories for each patient.
+# 2. Store results in a new vector "Severity_Label".
+# 3. Combine the original scores and labels in a data frame
+
+infection_score <- c(10, 35, 50, 80, 95)
+severity_label <- ifelse(infection_score < 30, "Mild",
+                   ifelse(infection_score >= 30 & infection_score <= 70, "Moderate", "Severe"))
+df_infection <- data.frame(infection_score, severity_label)
+df_infection
+
+# Problem 16: Combine All Skills – Hospital Ward Analysis
+# Background: A hospital ward recorded 6 patients with their age, temperature, and oxygen saturation (SpO₂).
+# Name Age Temp SpO2
+# Mina 25 36.8 99
+# Rafi 50 38.5 95
+# Sima 61 39.2 91
+# Rony 45 37.0 98
+# Asha 70 38.0 89
+# Nayeem 58 36.5 97
+# Clinical Rule:
+#   • If Temp > 38 AND SpO₂ < 94 → "Critical"
+# • Else if Temp > 37 AND SpO₂ < 96 → "At Risk"
+# • Else → "Stable"
+# Task:
+#   1. Create the data frame.
+# 2. Write a loop or ifelse() structure to classify each patient’s condition.
+# 3. Add a column "Condition" with the category.
+# 4. Print a summary table of how many patients fall into each category.
+Name <- c("Mina", "Rafi", "Sima", "Rony", "Asha", "Nayeem")
+Age <- c(25, 50, 61, 45, 70, 58)
+Temp <- c(36.8, 38.5, 39.2, 37, 38, 36.5)
+spO2 <- c(99,95,91,98,89,97)
+df_hospital_ward <- data.frame(Name, Age, Temp, spO2)
+df_hospital_ward
+df_hospital_ward$Patients_condition <- ifelse(df_hospital_ward$Temp > 38 & df_hospital_ward$spO2 < 94, "Critical",
+                                              ifelse(df_hospital_ward$Temp > 37 & df_hospital_ward$spO2 < 96, "At Risk", "Stable"))
+df_hospital_ward
