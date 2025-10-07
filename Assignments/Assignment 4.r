@@ -116,6 +116,13 @@ df$BMI_status <- ifelse(df$BMI >= 30, "Obese",
                                ifelse(df$BMI < 25,"Normal", NA)))
 df
 
+
+library(dplyr)
+
+df$BMI_status <- case_when(df$BMI >= 30 ~ "Obese", # using dplyr package
+                           df$BMI >= 25 & df$BMI <= 29.9 ~ "Overweight",
+                           df$BMI < 25 ~ "Normal")
+df
 # Problem 9: Identify Elderly Patients
 # Background: A geriatric trial defines elderly as Age ≥ 50.
 # Task: Filter the data frame to show only elderly participant
