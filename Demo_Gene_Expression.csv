@@ -1,0 +1,12 @@
+Gene ID,Sample ID,Expression Level,Upregulated,Tissue,Quality Score
+TP53,S_1,23.4,TRUE,Liver,95
+BRCA1,S_2,,FALSE,Brain,85
+MYC,sample-03,150.8,yes,Heart,80
+EGFR,Sample_04,-10.2,NO,Lung,105
+ALK#,S5,300.5,1,Kidney,-5
+PTEN*,S6,450.6,0,,76
+MDM2,S7,120.1,TRUE,Skin,65
+GATA3,S_08,,FALSE,Pancreas,90
+ERBB2,Sample9,98000,Yes,Liver,high
+PAX8,S_10,47.3,No,Brain,50
+MYC,sample-03,150.8,yes,Heart,80
